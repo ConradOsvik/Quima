@@ -1,0 +1,64 @@
+html[tabbing] .base:focus {
+    box-shadow: 0px 0px 0px 3px rgba(var(--button-color), 0.5);
+    outline: none;
+}
+
+.base {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: 300ms;
+}
+.base:focus {
+    outline: none;
+}
+
+.small {
+    padding: 8px 20px;
+    border-radius: 6px;
+    min-width: 80px;
+    font-size: 14px;
+}
+.medium {
+    padding: 12px 30px;
+    border-radius: 8px;
+    min-width: 100px;
+    font-size: 17px;
+}
+.large {
+    padding: 16px 40px;
+    border-radius: 10px;
+    min-width: 120px;
+    font-size: 20px;
+}
+
+.none {
+    border: none;
+    color: rgb(var(--button-color));
+}
+.none:hover {
+    background-color: rgba(var(--button-color), 0.2);
+}
+
+.box {
+    background-color: rgb(var(--button-color));
+    color: rgb(var(--app-background-color));
+}
+
+.disabled {
+    cursor: auto;
+    user-select: none;
+    pointer-events: none;
+    background-color: rgba(var(--app-color), 0.1);
+    color: rgba(var(--app-color), 0.3);
+}
+.disabled:hover {
+    background-color: rgba(var(--app-color), 0.1);
+    color: rgba(var(--app-color), 0.3);
+}
