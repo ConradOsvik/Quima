@@ -26,7 +26,7 @@ const Menu = (props) => {
         menuWidth,
         menuHeight;
 
-    if (anchor !== undefined) {
+    if (anchor !== undefined && ref.current !== undefined) {
         rect = anchor.getBoundingClientRect();
         x = rect.left;
         y = rect.top;
@@ -47,7 +47,7 @@ const Menu = (props) => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                zIndex: 0,
+                pointerEvents: "none",
                 visibility: Boolean(anchor) ? "visible" : "hidden",
             }}
         >

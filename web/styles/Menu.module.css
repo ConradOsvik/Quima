@@ -8,4 +8,5 @@
     min-width: 200px;
     min-height: 300px;
     color: rgb(var(--quima-light-app-color-dark));
+    background-color: rgb(var(--quima-light-app-background-color-light));
 }

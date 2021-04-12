@@ -79,20 +79,22 @@ export default function Home() {
             <DesktopView>Desktop</DesktopView>
             <TabletView>Tablet</TabletView>
             <MobileView>Mobile</MobileView>
-            <Button
-                style={{ marginLeft: "1000px" }}
-                onMouseEnter={(e) => setCurrentAnchor(e.target)}
+            <div
+                style={{ display: "inline-block" }}
+                onMouseLeave={() => setCurrentAnchor(undefined)}
             >
-                test
-            </Button>
-            <Menu anchor={currentAnchor}>testtesttest</Menu>
-            <Button
-                variant="box"
-                size="large"
-                onMouseEnter={(e) => setCurrentAnchor(e.target)}
-            >
-                anotha one
-            </Button>
+                <Button onMouseEnter={(e) => setCurrentAnchor(e.target)}>
+                    test
+                </Button>
+                <Menu anchor={currentAnchor}>testtesttest</Menu>
+                <Button
+                    variant="box"
+                    size="large"
+                    onMouseEnter={(e) => setCurrentAnchor(e.target)}
+                >
+                    anotha one
+                </Button>
+            </div>
         </div>
     );
 }
