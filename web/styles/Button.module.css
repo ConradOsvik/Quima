@@ -1,5 +1,5 @@
 html[tabbing] .base:focus {
-    box-shadow: 0px 0px 0px 3px rgba(var(--button-color), 0.5);
+    box-shadow: 0px 0px 0px 3px rgba(var(--button-focus-color), 0.5);
     outline: none;
 }
 

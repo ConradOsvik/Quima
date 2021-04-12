@@ -26,13 +26,6 @@
     font-display: swap;
     src: local("Roboto"), url(/fonts/Roboto-Bold.ttf) format("truetype");
 }
-:root {
-    --app-background-color: 255, 255, 255;
-    --app-color: 36, 36, 36;
-
-    --button-color: 26, 115, 232;
-    --input-color: 26, 115, 232;
-}
 html[tabbing] *:focus {
     outline: 2px solid black;
 }
@@ -41,6 +34,14 @@ body {
     padding: 0;
     margin: 0;
     font-family: Roboto;
+}
+body > div {
+    width: 100%;
+    min-height: 100vh;
+}
+body > div > div * {
+    position: relative;
+    z-index: 100;
 }
 
 a {
@@ -55,11 +56,20 @@ a {
     outline: none;
 }
 
-.overlay-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+.menu {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    transition: 300ms;
+}
+.menu-enter {
+    opacity: 0;
+}
+.menu-enter-done {
+    opacity: 1;
+    transition: 300ms;
+}
+.menu-exit {
+    opacity: 0;
+    transition: 300ms;
 }

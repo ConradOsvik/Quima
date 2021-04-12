@@ -1,4 +1,5 @@
 .container {
+    padding: 10px 100px;
     display: grid;
     grid-template-columns: repeat(3, 33.33%);
     box-shadow: 3px 0px 10px 1px rgba(var(--app-color), 0.5);

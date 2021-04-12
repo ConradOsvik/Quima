@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Head from "next/head";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import styles from "../styles/Home.module.css";
 
 import DesktopView from "../utils/DesktopView";
@@ -9,8 +10,12 @@ import TabletView from "../utils/TabletView";
 import MobileView from "../utils/MobileView";
 import AppBar from "../widgets/AppBar";
 import Paper from "../components/Paper";
+import Button from "../components/Button";
+const Menu = dynamic(() => import("../components/Menu"), { ssr: false });
 
 export default function Home() {
+    const [currentAnchor, setCurrentAnchor] = useState(undefined);
+
     useEffect(() => {
         document.addEventListener("keydown", handleKeyDown);
         document.addEventListener("mousedown", handleMouseDown);
@@ -74,7 +79,20 @@ export default function Home() {
             <DesktopView>Desktop</DesktopView>
             <TabletView>Tablet</TabletView>
             <MobileView>Mobile</MobileView>
-            <div className="overlay-container"></div>
+            <Button
+                style={{ marginLeft: "1000px" }}
+                onMouseEnter={(e) => setCurrentAnchor(e.target)}
+            >
+                test
+            </Button>
+            <Menu anchor={currentAnchor}>testtesttest</Menu>
+            <Button
+                variant="box"
+                size="large"
+                onMouseEnter={(e) => setCurrentAnchor(e.target)}
+            >
+                anotha one
+            </Button>
         </div>
     );
 }

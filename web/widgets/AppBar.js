@@ -16,7 +16,7 @@ const AppBar = (props) => {
 
     return (
         <DesktopView>
-            <div className={styles.container}>
+            <header className={styles.container}>
                 <div className={styles.left}></div>
                 <nav className={styles.middle}>{props.children}</nav>
                 <div className={styles.right}>
@@ -58,7 +58,7 @@ const AppBar = (props) => {
                         console.log(error)
                     )}
                 </div>
-            </div>
+            </header>
         </DesktopView>
     );
 };
