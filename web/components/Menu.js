@@ -56,7 +56,7 @@ const Menu = (props) => {
                     {...initialProps}
                     style={{
                         top:
-                            windowHeight < menuHeight + y
+                            windowHeight < menuHeight + y + height
                                 ? `${windowHeight - menuHeight}px`
                                 : `${y + height}px`,
                         left:
