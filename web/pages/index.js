@@ -9,7 +9,6 @@ import DesktopView from "../utils/DesktopView";
 import TabletView from "../utils/TabletView";
 import MobileView from "../utils/MobileView";
 import AppBar from "../widgets/AppBar";
-import Paper from "../components/Paper";
 import Button from "../components/Button";
 const Menu = dynamic(() => import("../components/Menu"), { ssr: false });
 
@@ -67,34 +66,58 @@ export default function Home() {
             </Head>
             <AppBar>
                 <Link href="/">
-                    <a>🏡Home</a>
+                    <a>Home</a>
                 </Link>
                 <Link href="/ui-lab">
-                    <a>🥼UI Lab</a>
+                    <a>UI Lab</a>
                 </Link>
             </AppBar>
-
-            <Paper>test</Paper>
-
-            <DesktopView>Desktop</DesktopView>
-            <TabletView>Tablet</TabletView>
-            <MobileView>Mobile</MobileView>
-            <div
-                style={{ display: "inline-block" }}
-                onMouseLeave={() => setCurrentAnchor(undefined)}
-            >
-                <Button onMouseEnter={(e) => setCurrentAnchor(e.target)}>
-                    test
-                </Button>
-                <Menu anchor={currentAnchor}>testtesttest</Menu>
-                <Button
-                    variant="box"
-                    size="large"
-                    onMouseEnter={(e) => setCurrentAnchor(e.target)}
+            <main>
+                <DesktopView>Desktop</DesktopView>
+                <TabletView>Tablet</TabletView>
+                <MobileView>Mobile</MobileView>
+                <div
+                    style={{ display: "inline-block" }}
+                    onMouseLeave={() => setCurrentAnchor(undefined)}
                 >
-                    anotha one
+                    <Button onMouseEnter={(e) => setCurrentAnchor(e.target)}>
+                        test
+                    </Button>
+                    <Menu anchor={currentAnchor}>testtesttest</Menu>
+                    <Button
+                        variant="box"
+                        size="large"
+                        onMouseEnter={(e) => setCurrentAnchor(e.target)}
+                    >
+                        anotha one
+                    </Button>
+                </div>
+                <Button
+                    onClick={() => {
+                        document.querySelector("html").removeAttribute("theme");
+                    }}
+                >
+                    toggle light
                 </Button>
-            </div>
+                <Button
+                    onClick={() => {
+                        document
+                            .querySelector("html")
+                            .setAttribute("theme", "dark");
+                    }}
+                >
+                    toggle dark
+                </Button>
+                <Button
+                    onClick={() => {
+                        document
+                            .querySelector("html")
+                            .setAttribute("theme", "contrast");
+                    }}
+                >
+                    toggle contrast
+                </Button>
+            </main>
         </div>
     );
 }

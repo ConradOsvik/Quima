@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    min-width: 200px;
+    cursor: pointer;
+    color: rgb(var(--app-color));
+}

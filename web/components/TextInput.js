@@ -23,12 +23,19 @@ const TextInput = React.forwardRef((props, ref) => {
         tabIndex: props.disabled ? -1 : 0,
     };
 
+    const handleChange = (e) => {
+        if (props.onChange) {
+            props.onChange(e);
+        }
+        setValue(e.target.value);
+    };
+
     return (
         <input
             {...initialProps}
             ref={ref}
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
         />
     );
 });

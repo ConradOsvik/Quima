@@ -2,11 +2,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--quima-app-default-component-padding);
-    border: 2px solid rgba(var(--quima-light-app-color-dark), 0.1);
-    border-radius: 10px;
-    min-width: 200px;
-    min-height: 300px;
-    color: rgb(var(--quima-light-app-color-dark));
-    background-color: rgb(var(--quima-light-app-background-color-light));
 }

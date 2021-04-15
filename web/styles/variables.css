@@ -1,29 +1,24 @@
 :root {
-    --quima-app-default-component-padding: 10px;
-    --quima-app-compact-component-padding: 10px;
-    --quima-app-default-component-margin: 10px;
-    --quima-app-compact-component-margin: 10px;
+    --quima-default-component-padding: 10px;
+    --quima-compact-component-padding: 5px;
+    --quima-default-component-margin: 10px;
+    --quima-compact-component-margin: 5px;
 
-    --quima-light-app-background-color-light: 255, 255, 255;
-    --quima-light-app-background-color-normal: 250, 250, 250;
-    --quima-light-app-background-color-dark: 245, 245, 245;
-    --quima-dark-app-background-color-light: 97, 97, 97;
-    --quima-dark-app-background-color-normal: 66, 66, 66;
-    --quima-dark-app-background-color-dark: 33, 33, 33;
-    --quima-contrast-app-background-color-light: 33, 33, 33;
-    --quima-contrast-app-background-color-normal: 17, 17, 17;
-    --quima-contrast-app-background-color-dark: 0, 0, 0;
+    --quima-accent-0: 255, 255, 255;
+    --quima-accent-1: 250, 250, 250;
+    --quima-accent-2: 245, 245, 245;
+    --quima-accent-3: 238, 238, 238;
+    --quima-accent-4: 224, 224, 224;
+    --quima-accent-5: 189, 189, 189;
+    --quima-accent-6: 158, 158, 158;
+    --quima-accent-7: 117, 117, 117;
+    --quima-accent-8: 97, 97, 97;
+    --quima-accent-9: 66, 66, 66;
+    --quima-accent-10: 33, 33, 33;
+    --quima-accent-11: 0, 0, 0;
 
-    --quima-light-app-color-light: 97, 97, 97;
-    --quima-light-app-color-normal: 66, 66, 66;
-    --quima-light-app-color-dark: 33, 33, 33;
-    --quima-dark-app-color-light: 250, 250, 250;
-    --quima-dark-app-color-normal: 245, 245, 245;
-    --quima-dark-app-color-dark: 238, 238, 238;
-    --quima-contrast-app-color-light: 255, 255, 255;
-    --quima-contrast-app-color-normal: 250, 250, 250;
-    --quima-contrast-app-color-dark: 245, 245, 245;
-
+    --quima-white: 255, 255, 255;
+    --quima-black: 0, 0, 0;
     --quima-red-50: 255, 235, 238;
     --quima-red-100: 255, 205, 210;
     --quima-red-200: 239, 154, 154;
@@ -281,14 +276,51 @@
 }
 
 :root {
-    --app-background-color: var(--quima-light-app-background-color-light);
-    --app-color: var(--quima-light-app-color-dark);
+    --app-background-color: var(--quima-accent-0);
+    --app-color: var(--quima-accent-7);
 
-    --button-color: var(--quima-blue-700);
+    --app-bar-background-color: var(--quima-accent-0);
+    --app-bar-border-color: var(--quima-accent-4);
+    --app-bar-color: var(--quima-accent-7);
+    --app-bar-hover-color: var(--quima-accent-12);
+
+    --button-background-color: var(--quima-blue-700);
+    --button-color: var(--quima-white);
     --button-focus-color: var(--quima-blue-700);
+
     --input-color: var(--quima-blue-700);
+
+    --settings-menu-padding: var(--quima-default-component-padding);
+    --settings-menu-margin: var(--quima-default-component-margin);
+    --settings-menu-border: var(--quima-accent-4);
+    --settings-menu-background-color: var(--quima-accent-0);
+    --settings-menu-color: var(--quima-accent-9);
+
+    --menu-item-color: var(--quima-light-app-color-dark);
 }
-:root[dark] {
+:root[theme="dark"] {
+    --app-background-color: var(--quima-accent-10);
+    --app-color: var(--quima-accent-5);
+
+    --app-bar-background-color: var(--quima-accent-9);
+    --app-bar-border-color: var(--quima-accent-8);
+    --app-bar-color: var(--quima-accent-5);
+    --app-bar-hover-color: var(--quima-accent-0);
+
+    --settings-menu-border: var(--quima-accent-8);
+    --settings-menu-background-color: var(--quima-accent-9);
+    --settings-menu-color: var(--quima-accent-5);
 }
-:root[contrast] {
+:root[theme="contrast"] {
+    --app-background-color: var(--quima-accent-11);
+    --app-color: var(--quima-accent-6);
+
+    --app-bar-background-color: var(--quima-accent-11);
+    --app-bar-border-color: var(--quima-accent-10);
+    --app-bar-color: var(--quima-accent-6);
+    --app-bar-hover-color: var(--quima-accent-0);
+
+    --settings-menu-border: var(--quima-accent-10);
+    --settings-menu-background-color: var(--quima-accent-10);
+    --settings-menu-color: var(--quima-accent-6);
 }

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "../utils/Firebase";
 import { useRouter } from "next/router";
@@ -8,11 +9,14 @@ import TabletView from "../utils/TabletView";
 import MobileView from "../utils/MobileView";
 
 import Button from "../components/Button";
+import Menu from "../components/Menu";
+import SettingsMenu from "../widgets/SettingsMenu";
 
 const AppBar = (props) => {
     const router = useRouter();
 
     const [user, loading, error] = useAuthState(firebase.auth());
+    const [anchor, setAnchor] = useState(undefined);
 
     return (
         <DesktopView>
@@ -53,7 +57,22 @@ const AppBar = (props) => {
                             </Button>
                         </>
                     ) : user ? (
-                        <div className={styles.profileContainer}></div>
+                        <>
+                            <div
+                                className={styles.profileContainer}
+                                onClick={(e) =>
+                                    setAnchor(
+                                        Boolean(anchor) ? undefined : e.target
+                                    )
+                                }
+                            ></div>
+                            <Menu
+                                anchor={anchor}
+                                onClose={() => setAnchor(undefined)}
+                            >
+                                <SettingsMenu />
+                            </Menu>
+                        </>
                     ) : (
                         console.log(error)
                     )}

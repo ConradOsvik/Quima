@@ -40,15 +40,15 @@ html[tabbing] .base:focus {
 
 .none {
     border: none;
-    color: rgb(var(--button-color));
+    color: rgb(var(--button-background-color));
 }
 .none:hover {
-    background-color: rgba(var(--button-color), 0.2);
+    background-color: rgba(var(--button-background-color), 0.2);
 }
 
 .box {
-    background-color: rgb(var(--button-color));
-    color: rgb(var(--app-background-color));
+    background-color: rgb(var(--button-background-color));
+    color: rgb(var(--button-color));
 }
 
 .disabled {

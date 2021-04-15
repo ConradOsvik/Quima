@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import styles from "../styles/Menu.module.css";
 import { CSSTransition } from "react-transition-group";
@@ -12,32 +12,67 @@ const Menu = (props) => {
         anchor: undefined,
     };
 
+    const [windowX, setWindowX] = useState(undefined);
+    const [windowY, setWindowY] = useState(undefined);
+    const [windowWidth, setWindowWidth] = useState(undefined);
+    const [windowHeight, setWindowHeight] = useState(undefined);
+    const [buttonWidth, setButtonWidth] = useState(undefined);
+    const [buttonHeight, setButtonHeight] = useState(undefined);
+    const [menuWidth, setMenuWidth] = useState(undefined);
+    const [menuHeight, setMenuHeight] = useState(undefined);
+
+    useEffect(() => {
+        window.addEventListener("click", handleClick);
+        window.addEventListener("resize", handleResize);
+
+        if (props.anchor !== undefined && ref.current !== undefined) {
+            getMenuPlacement(window.innerWidth, window.innerHeight);
+        }
+
+        return () => {
+            window.removeEventListener("click", handleClick);
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [props.anchor, ref]);
+
+    const handleClick = (e) => {
+        if (props.anchor !== undefined && ref.current !== undefined) {
+            if (e.target !== props.anchor && !props.anchor.contains(e.target)) {
+                if (
+                    e.target !== ref.current &&
+                    !ref.current.contains(e.target)
+                ) {
+                    if (props.onClose) {
+                        props.onClose();
+                    }
+                }
+            }
+        }
+    };
+
+    const handleResize = (e) => {
+        if (props.anchor !== undefined && ref.current !== undefined) {
+            const width = e.currentTarget.innerWidth;
+            const height = e.currentTarget.innerHeight;
+            getMenuPlacement(width, height);
+        }
+    };
+
+    const getMenuPlacement = (windowW, windowH) => {
+        const anchorRect = props.anchor.getBoundingClientRect();
+        const menuRect = ref.current.getBoundingClientRect();
+
+        setWindowX(anchorRect.left);
+        setWindowY(anchorRect.top);
+        setWindowWidth(windowW);
+        setWindowHeight(windowH);
+        setButtonWidth(anchorRect.width);
+        setButtonHeight(anchorRect.height);
+        setMenuWidth(menuRect.width);
+        setMenuHeight(menuRect.height);
+    };
+
     const ref = useRef();
-
-    const anchor = props.anchor;
-    let rect,
-        x,
-        y,
-        height,
-        width,
-        windowWidth,
-        windowHeight,
-        menuRect,
-        menuWidth,
-        menuHeight;
-
-    if (anchor !== undefined && ref.current !== undefined) {
-        rect = anchor.getBoundingClientRect();
-        x = rect.left;
-        y = rect.top;
-        height = rect.height;
-        width = rect.width;
-        windowWidth = window.innerWidth;
-        windowHeight = window.innerHeight;
-        menuRect = ref.current.getBoundingClientRect();
-        menuWidth = menuRect.width;
-        menuHeight = menuRect.height;
-    }
 
     return ReactDOM.createPortal(
         <div
@@ -47,22 +82,30 @@ const Menu = (props) => {
                 left: 0,
                 right: 0,
                 bottom: 0,
+                zIndex: 1000,
                 pointerEvents: "none",
-                visibility: Boolean(anchor) ? "visible" : "hidden",
+                visibility: Boolean(props.anchor) ? "visible" : "hidden",
             }}
         >
-            <CSSTransition in={Boolean(anchor)} timeout={300} classNames="menu">
+            <CSSTransition
+                in={Boolean(props.anchor)}
+                timeout={0}
+                classNames="menu"
+            >
                 <div
                     {...initialProps}
                     style={{
                         top:
-                            windowHeight < menuHeight + y + height
+                            windowHeight < menuHeight + windowY + buttonHeight
                                 ? `${windowHeight - menuHeight}px`
-                                : `${y + height}px`,
+                                : `${windowY + buttonHeight}px`,
                         left:
-                            windowWidth < menuWidth + x
+                            windowWidth <
+                            windowX + buttonWidth / 2 + menuWidth / 2
                                 ? `${windowWidth - menuWidth}px`
-                                : `${x}px`,
+                                : `${
+                                      windowX + buttonWidth / 2 - menuWidth / 2
+                                  }px`,
                     }}
                     ref={ref}
                 >
@@ -75,24 +118,3 @@ const Menu = (props) => {
 };
 
 export default Menu;
-
-{
-    /*<div
-            {...initialProps}
-            style={{
-                position: "absolute",
-                display: "inline-block",
-                top:
-                    windowHeight < menuHeight + y + height
-                        ? `${windowHeight - menuHeight}px`
-                        : `${y + height}px`,
-                left:
-                    windowWidth < menuWidth + x + width
-                        ? `${windowWidth - menuWidth}px`
-                        : `${x}px`,
-            }}
-            ref={ref}
-        >
-            {props.children}
-        </div> */
-}
