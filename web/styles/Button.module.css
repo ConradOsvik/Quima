@@ -3,6 +3,10 @@ html[tabbing] .base:focus {
     outline: none;
 }
 
+html[dir="rtl"] .base {
+    flex-direction: row-reverse;
+}
+
 .base {
     display: inline-flex;
     justify-content: center;
