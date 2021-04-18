@@ -12,6 +12,9 @@ const Menu = (props) => {
         anchor: undefined,
     };
 
+    const ref = useRef();
+    const [mounted, setMounted] = useState(false);
+
     const [windowX, setWindowX] = useState(undefined);
     const [windowY, setWindowY] = useState(undefined);
     const [windowWidth, setWindowWidth] = useState(undefined);
@@ -22,6 +25,8 @@ const Menu = (props) => {
     const [menuHeight, setMenuHeight] = useState(undefined);
 
     useEffect(() => {
+        setMounted(true);
+
         window.addEventListener("click", handleClick);
         window.addEventListener("resize", handleResize);
 
@@ -72,49 +77,58 @@ const Menu = (props) => {
         setMenuHeight(menuRect.height);
     };
 
-    const ref = useRef();
-
-    return ReactDOM.createPortal(
-        <div
-            style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                zIndex: 1000,
-                pointerEvents: "none",
-                visibility: Boolean(props.anchor) ? "visible" : "hidden",
-            }}
-        >
-            <CSSTransition
-                in={Boolean(props.anchor)}
-                timeout={0}
-                classNames="menu"
-            >
-                <div
-                    {...initialProps}
-                    style={{
-                        top:
-                            windowHeight < menuHeight + windowY + buttonHeight
-                                ? `${windowHeight - menuHeight}px`
-                                : `${windowY + buttonHeight}px`,
-                        left:
-                            windowWidth <
-                            windowX + buttonWidth / 2 + menuWidth / 2
-                                ? `${windowWidth - menuWidth}px`
-                                : `${
-                                      windowX + buttonWidth / 2 - menuWidth / 2
-                                  }px`,
-                    }}
-                    ref={ref}
-                >
-                    {props.children}
-                </div>
-            </CSSTransition>
-        </div>,
-        document.querySelector("body")
-    );
+    return mounted
+        ? ReactDOM.createPortal(
+              <CSSTransition
+                  in={Boolean(props.anchor)}
+                  timeout={300}
+                  classNames="menu-container"
+              >
+                  <div className="menu-container">
+                      <CSSTransition
+                          in={Boolean(props.anchor)}
+                          timeout={150}
+                          classNames="menu"
+                      >
+                          <div
+                              {...initialProps}
+                              style={{
+                                  transformOrigin: `${
+                                      windowHeight <
+                                      windowY + buttonHeight + menuHeight
+                                          ? "bottom"
+                                          : "top"
+                                  } ${
+                                      windowWidth < windowX + menuWidth
+                                          ? "right"
+                                          : "left"
+                                  }`,
+                                  top:
+                                      windowHeight <
+                                      windowY + buttonHeight + menuHeight
+                                          ? `${windowY - menuHeight - 5}px`
+                                          : `${windowY + buttonHeight + 5}px`,
+                                  left:
+                                      windowWidth < windowX + menuWidth
+                                          ? `${
+                                                windowX +
+                                                buttonWidth -
+                                                menuWidth
+                                            }px`
+                                          : `${windowX}px`,
+                              }}
+                              ref={ref}
+                          >
+                              <div className={styles["inner-container"]}>
+                                  {props.children}
+                              </div>
+                          </div>
+                      </CSSTransition>
+                  </div>
+              </CSSTransition>,
+              document.querySelector("body")
+          )
+        : "";
 };
 
 export default Menu;

@@ -57,19 +57,46 @@ a {
     outline: none;
 }
 
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    pointer-events: none;
+    visibility: hidden;
+}
+.menu-container-enter {
+    visibility: visible;
+}
+.menu-container-enter-done {
+    visibility: visible;
+}
+.menu-container-exit {
+    visibility: visible;
+}
+.menu-container-exit-done {
+    visibility: hidden;
+}
+
 .menu {
     position: absolute;
     z-index: 1000;
     opacity: 0;
+    transform: scale(0.75);
     pointer-events: all;
-    transition: top 300ms, left 300ms, opacity 150ms;
+    transition: top 300ms, left 300ms, opacity 150ms, transform 150ms;
 }
 .menu-enter {
     opacity: 0;
+    transform: scale(0.75);
 }
 .menu-enter-done {
     opacity: 1;
+    transform: scale(1);
 }
-.menu-exit {
+.menu-exit-done {
     opacity: 0;
+    transform: scale(0.75);
 }
