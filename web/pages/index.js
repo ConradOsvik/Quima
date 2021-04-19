@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import styles from "../styles/Home.module.css";
+import useTabbing from "../utils/hooks/useTabbing";
 
 import DesktopView from "../utils/DesktopView";
 import TabletView from "../utils/TabletView";
@@ -15,25 +16,7 @@ const Menu = dynamic(() => import("../components/Menu"), { ssr: false });
 export default function Home() {
     const [currentAnchor, setCurrentAnchor] = useState(undefined);
 
-    useEffect(() => {
-        document.addEventListener("keydown", handleKeyDown);
-        document.addEventListener("mousedown", handleMouseDown);
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown);
-            document.removeEventListener("mousedown", handleMouseDown);
-        };
-    }, []);
-
-    const handleKeyDown = (e) => {
-        if (e.key === "Tab") {
-            document.querySelector("html").setAttribute("tabbing", "");
-        } else {
-            document.querySelector("html").removeAttribute("tabbing");
-        }
-    };
-    const handleMouseDown = () => {
-        document.querySelector("html").removeAttribute("tabbing");
-    };
+    useTabbing();
 
     return (
         <div className={styles.container}>

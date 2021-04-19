@@ -4,10 +4,11 @@ import Head from "next/head";
 import useTabbing from "../utils/hooks/useTabbing";
 
 import Button from "../components/Button";
-import SliderInput from "../components/SliderInput";
 import TextInput from "../components/TextInput";
 import Text from "../components/Text";
 import Menu from "../components/Menu";
+import Select from "../components/Select";
+import Option from "../components/Option";
 
 const UILab = (props) => {
     useTabbing();
@@ -71,6 +72,9 @@ const UILab = (props) => {
             <Menu anchor={currentAnchor}>test</Menu>
             <Text variant="body1">Inputs:</Text>
             <TextInput />
+            <Select value="choose value">
+                <Option>test</Option>
+            </Select>
         </div>
     );
 };

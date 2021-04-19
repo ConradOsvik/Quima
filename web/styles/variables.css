@@ -363,6 +363,8 @@
 
     --input-color: var(--quima-blue-700);
 
+    --menu-background-color: var(--quima-accent-0);
+
     --settings-menu-padding: var(--quima-default-component-padding);
     --settings-menu-margin: var(--quima-default-component-margin);
     --settings-menu-border: var(--quima-accent-4);
@@ -379,6 +381,8 @@
     --app-bar-border-color: var(--quima-accent-8);
     --app-bar-color: var(--quima-accent-5);
     --app-bar-hover-color: var(--quima-accent-0);
+
+    --menu-background-color: var(--quima-accent-9);
 
     --settings-menu-border: var(--quima-accent-8);
     --settings-menu-background-color: var(--quima-accent-9);

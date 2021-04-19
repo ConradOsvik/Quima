@@ -5,7 +5,8 @@ html[tabbing] .input:focus {
 }
 .input {
     border: none;
-    border-radius: 1000px;
+    border-radius: 5px;
+    box-shadow: var(--quima-shadow-level-3);
     background-color: rgba(var(--app-color), 0.1);
     padding: 10px 20px;
     margin: 5px;

@@ -10,6 +10,7 @@ const Menu = (props) => {
             props.className !== undefined ? props.className : ""
         } ${styles.container}`,
         anchor: undefined,
+        role: "menu",
     };
 
     const ref = useRef();
@@ -65,7 +66,11 @@ const Menu = (props) => {
 
     const getMenuPlacement = (windowW, windowH) => {
         const anchorRect = props.anchor.getBoundingClientRect();
-        const menuRect = ref.current.getBoundingClientRect();
+        const menuRect = {
+            width: ref.current.offsetWidth,
+            height: ref.current.offsetHeight,
+        };
+        /*getBoundingClientRect not ignoring css transform transitions */
 
         setWindowX(anchorRect.left);
         setWindowY(anchorRect.top);
@@ -81,14 +86,15 @@ const Menu = (props) => {
         ? ReactDOM.createPortal(
               <CSSTransition
                   in={Boolean(props.anchor)}
-                  timeout={300}
+                  timeout={150}
                   classNames="menu-container"
               >
-                  <div className="menu-container">
+                  <div className="menu-container" role="presentation">
                       <CSSTransition
                           in={Boolean(props.anchor)}
                           timeout={150}
                           classNames="menu"
+                          unmountOnExit
                       >
                           <div
                               {...initialProps}

@@ -51,6 +51,7 @@ html[dir="rtl"] .base {
 }
 
 .box {
+    box-shadow: var(--quima-shadow-level-1);
     background-color: rgb(var(--button-background-color));
     color: rgb(var(--button-color));
 }
