@@ -10,6 +10,8 @@ import Menu from "../components/Menu";
 import Select from "../components/Select";
 import Option from "../components/Option";
 
+import { Activity } from "react-feather";
+
 const UILab = (props) => {
     useTabbing();
 
@@ -58,7 +60,7 @@ const UILab = (props) => {
             <Text variant="caption">This is a caption</Text>
             <Text variant="overline">This is an underline</Text>
             <Text variant="body1">Buttons:</Text>
-            <Button>Button</Button>
+            <Button prefix={<Activity />}>Button</Button>
             <Button
                 variant="box"
                 onClick={(e) =>

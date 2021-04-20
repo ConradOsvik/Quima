@@ -26,50 +26,24 @@ const Button = React.forwardRef((props, ref) => {
 
     return (
         <button {...initialProps} ref={ref}>
-            {props.prefix !== true ? (
-                props.prefix !== undefined ? (
-                    props.prefix.length > 0 ? (
-                        <span
-                            style={
-                                props.size === "medium"
-                                    ? { marginRight: 4 }
-                                    : props.size === "large"
-                                    ? { marginRight: 6 }
-                                    : { marginRight: 2 }
-                            }
-                        >
-                            {props.prefix}
-                        </span>
-                    ) : (
-                        ""
-                    )
-                ) : (
-                    ""
-                )
+            {React.isValidElement(props.prefix) ? (
+                <span className={styles.prefix}>
+                    {React.cloneElement(props.prefix, {
+                        width: undefined,
+                        height: undefined,
+                    })}
+                </span>
             ) : (
                 ""
             )}
             {props.children}
-            {props.suffix !== true ? (
-                props.suffix !== undefined ? (
-                    props.suffix.length > 0 ? (
-                        <span
-                            style={
-                                props.size === "medium"
-                                    ? { marginLeft: 4 }
-                                    : props.size === "large"
-                                    ? { marginLeft: 6 }
-                                    : { marginLeft: 2 }
-                            }
-                        >
-                            {props.suffix}
-                        </span>
-                    ) : (
-                        ""
-                    )
-                ) : (
-                    ""
-                )
+            {React.isValidElement(props.suffix) ? (
+                <span className={styles.suffix}>
+                    {React.cloneElement(props.suffix, {
+                        width: undefined,
+                        height: undefined,
+                    })}
+                </span>
             ) : (
                 ""
             )}
