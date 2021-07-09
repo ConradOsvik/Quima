@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { toPng } from "html-to-image";
+import { toPng } from "dom-to-image";
 
 const useScreenshot = (node: HTMLElement) => {
     const [dataURL, setDataURL] = useState(undefined);
