@@ -1,0 +1,213 @@
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: var(--quima-normal-margin);
+}
+
+.label {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    margin: var(--quima-normal-margin) 0;
+}
+
+.innerContainer {
+    box-shadow: 0 0 0 2px rgb(var(--app-color-alpha-300));
+    border-radius: var(--quima-small-border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    transition: box-shadow 300ms;
+}
+.innerContainer:focus-within {
+    box-shadow: 0 0 0 2px rgb(var(--primary));
+}
+
+.input {
+    border: transparent;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    height: 20px;
+}
+.input:focus {
+    outline: none;
+}
+.input::placeholder {
+    color: rgb(var(--app-color-alpha-500));
+}
+
+.icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    color: rgb(var(--app-color));
+    transition: color 300ms;
+}
+.icon svg {
+    width: 20px;
+    height: 20px;
+}
+.leftIcon {
+    margin-right: 0;
+}
+.rightIcon {
+    margin-left: 0;
+    cursor: pointer;
+}
+.innerContainer:focus-within .rightIcon {
+    color: rgb(var(--primary));
+}
+
+.numberContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-left: 2px solid rgb(var(--app-color-alpha-300));
+    height: 40px;
+    transition: border 300ms;
+}
+.numberButton {
+    padding: 0 15px;
+    width: 100%;
+    height: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+}
+.numberIncrement {
+    position: relative;
+    border-bottom: 1px solid rgb(var(--app-color-alpha-300));
+    transition: border 300ms;
+}
+.numberIncrement::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 0;
+    height: 0;
+    border-bottom: 7px solid rgb(var(--primary));
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid transparent;
+}
+.numberDecrement {
+    position: relative;
+    border-top: 1px solid rgb(var(--app-color-alpha-300));
+    transition: border 300ms;
+}
+.numberDecrement::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    width: 0;
+    height: 0;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid rgb(var(--primary));
+}
+.innerContainer:focus-within .numberContainer {
+    border-color: rgb(var(--primary));
+}
+.innerContainer:focus-within .numberIncrement,
+.innerContainer:focus-within .numberDecrement {
+    border-color: rgb(var(--primary));
+}
+
+.feedbackContainer {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+}
+
+.feedback {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    margin: var(--quima-normal-margin) 0;
+}
+.maxCharacters {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin: var(--quima-normal-margin) 0;
+}
+
+.error .feedbackContainer {
+    color: rgb(var(--quima-red-500));
+}
+.error .innerContainer {
+    box-shadow: 0 0 0 2px rgb(var(--quima-red-500));
+}
+.error .rightIcon {
+    color: rgb(var(--quima-red-500));
+}
+.error:focus-within .rightIcon {
+    color: rgb(var(--quima-red-500));
+}
+.success .feedbackContainer {
+    color: rgb(var(--quima-green-500));
+}
+.success .innerContainer {
+    box-shadow: 0 0 0 2px rgb(var(--quima-green-500));
+}
+.success .rightIcon {
+    color: rgb(var(--quima-green-500));
+}
+.success:focus-within .rightIcon {
+    color: rgb(var(--quima-green-500));
+}
+.warning .feedbackContainer {
+    color: rgb(var(--quima-orange-500));
+}
+.warning .innerContainer {
+    box-shadow: 0 0 0 2px rgb(var(--quima-orange-500));
+}
+.warning .rightIcon {
+    color: rgb(var(--quima-orange-500));
+}
+.warning:focus-within .rightIcon {
+    color: rgb(var(--quima-orange-500));
+}
+
+.disabled {
+    pointer-events: none;
+    user-select: none;
+    color: rgb(var(--disabled-color));
+}
+.disabled .input {
+    color: rgb(var(--disabled-color));
+    resize: none;
+    user-select: none;
+}
+.disabled .input::placeholder {
+    color: rgb(var(--disabled-color));
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input[type="number"] {
+    -moz-appearance: textfield;
+}

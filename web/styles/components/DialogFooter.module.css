@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 10px;
+}
+.button {
+    font-weight: 500;
+    font-size: var(--app-font-size-md);
+    padding: 8px 20px;
+    margin: 5px;
+    min-width: 80px;
+    border-radius: 5px;
+    color: rgb(var(--app-color));
+    background-color: rgb(var(--app-color-alpha-200));
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 300ms, border 300ms;
+}
+.button:hover {
+    background-color: rgb(var(--app-color-alpha-400));
+}
+.button:active {
+    border: 1px solid rgb(var(--app-color-alpha-400));
+}
+.cancel {
+    background-color: rgba(var(--quima-red-400), 0.3);
+}
+.cancel:hover {
+    background-color: rgba(var(--quima-red-400), 1);
+}

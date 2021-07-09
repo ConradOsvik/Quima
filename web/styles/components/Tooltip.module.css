@@ -1,0 +1,16 @@
+.container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tooltip {
+    border-radius: var(--quima-large-border-radius);
+    padding: var(--quima-normal-padding);
+    margin: var(--quima-normal-margin);
+    background-color: rgb(var(--app-color-alpha-800));
+    color: rgb(var(--app-background-color));
+    box-shadow: 0 2px 5px 1px rgba(var(--quima-black), 0.3);
+    font-size: 14px;
+    z-index: 2000;
+}

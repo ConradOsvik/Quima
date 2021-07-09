@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 300ms, border 300ms;
+}
+.icon:hover {
+    background-color: rgb(var(--app-color-alpha-200));
+}
+.icon:active {
+    border: 1px solid rgb(var(--app-color-alpha-200));
+}
+.iconImg {
+    width: 40px;
+}
+.title {
+    width: 100%;
+    margin: 0;
+    font-weight: 500;
+    font-size: var(--app-font-size-2xl);
+    text-align: left;
+    padding: 5px;
+}

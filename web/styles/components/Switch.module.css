@@ -1,0 +1,72 @@
+.container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin: var(--quima-normal-margin);
+}
+.containerReverse {
+    flex-direction: row-reverse;
+}
+
+.track {
+    width: 44px;
+    height: 24px;
+    background-color: rgb(var(--app-color-alpha-300));
+    border-radius: var(--quima-max-border-radius);
+    position: relative;
+    transition: background-color 300ms;
+}
+.head {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--quima-max-border-radius);
+    background-color: rgb(var(--quima-white));
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(2px, -50%);
+    transition: transform 300ms, background-color 300ms;
+}
+.input {
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    cursor: pointer;
+}
+.label {
+    margin: 0 var(--quima-normal-margin);
+}
+
+.primary.checked .track {
+    background-color: rgb(var(--primary));
+}
+.secondary.checked .track {
+    background-color: rgb(var(--secondary));
+}
+.checked .track .head {
+    transform: translate(22px, -50%);
+}
+
+.disabled {
+    pointer-events: none;
+    user-select: none;
+}
+.disabled .track {
+    background-color: rgb(var(--disabled)) !important;
+}
+.disabled .head {
+    background-color: rgb(var(--app-background-color)) !important;
+}
+.disabled.checked .track .head {
+    background-color: rgb(var(--disabled-color)) !important;
+}
+.disabled .label {
+    color: rgb(var(--disabled-color));
+}

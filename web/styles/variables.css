@@ -1,24 +1,29 @@
 :root {
-    --quima-default-component-padding: 10px;
-    --quima-compact-component-padding: 5px;
-    --quima-default-component-margin: 10px;
-    --quima-compact-component-margin: 5px;
-
-    --quima-accent-0: 255, 255, 255;
-    --quima-accent-1: 250, 250, 250;
-    --quima-accent-2: 245, 245, 245;
-    --quima-accent-3: 238, 238, 238;
-    --quima-accent-4: 224, 224, 224;
-    --quima-accent-5: 189, 189, 189;
-    --quima-accent-6: 158, 158, 158;
-    --quima-accent-7: 117, 117, 117;
-    --quima-accent-8: 97, 97, 97;
-    --quima-accent-9: 66, 66, 66;
-    --quima-accent-10: 33, 33, 33;
-    --quima-accent-11: 0, 0, 0;
-
     --quima-white: 255, 255, 255;
     --quima-black: 0, 0, 0;
+
+    --quima-white-alpha-50: 255, 255, 255, 0.04;
+    --quima-white-alpha-100: 255, 255, 255, 0.06;
+    --quima-white-alpha-200: 255, 255, 255, 0.08;
+    --quima-white-alpha-300: 255, 255, 255, 0.16;
+    --quima-white-alpha-400: 255, 255, 255, 0.24;
+    --quima-white-alpha-500: 255, 255, 255, 0.36;
+    --quima-white-alpha-600: 255, 255, 255, 0.48;
+    --quima-white-alpha-700: 255, 255, 255, 0.64;
+    --quima-white-alpha-800: 255, 255, 255, 0.8;
+    --quima-white-alpha-900: 255, 255, 255, 0.92;
+
+    --quima-black-alpha-50: 0, 0, 0, 0.04;
+    --quima-black-alpha-100: 0, 0, 0, 0.06;
+    --quima-black-alpha-200: 0, 0, 0, 0.08;
+    --quima-black-alpha-300: 0, 0, 0, 0.16;
+    --quima-black-alpha-400: 0, 0, 0, 0.24;
+    --quima-black-alpha-500: 0, 0, 0, 0.36;
+    --quima-black-alpha-600: 0, 0, 0, 0.48;
+    --quima-black-alpha-700: 0, 0, 0, 0.64;
+    --quima-black-alpha-800: 0, 0, 0, 0.8;
+    --quima-black-alpha-900: 0, 0, 0, 0.92;
+
     --quima-red-50: 255, 235, 238;
     --quima-red-100: 255, 205, 210;
     --quima-red-200: 239, 154, 154;
@@ -33,6 +38,7 @@
     --quima-red-a200: 255, 82, 82;
     --quima-red-a400: 255, 23, 68;
     --quima-red-a700: 213, 0, 0;
+
     --quima-pink-50: 252, 228, 236;
     --quima-pink-100: 248, 187, 208;
     --quima-pink-200: 244, 143, 177;
@@ -47,6 +53,7 @@
     --quima-pink-a200: 255, 64, 129;
     --quima-pink-a400: 245, 0, 87;
     --quima-pink-a700: 197, 17, 98;
+
     --quima-purple-50: 243, 229, 245;
     --quima-purple-100: 225, 190, 231;
     --quima-purple-200: 206, 147, 216;
@@ -61,6 +68,7 @@
     --quima-purple-a200: 224, 64, 251;
     --quima-purple-a400: 213, 0, 249;
     --quima-purple-a700: 170, 0, 255;
+
     --quima-deep-purple-50: 237, 231, 246;
     --quima-deep-purple-100: 209, 196, 233;
     --quima-deep-purple-200: 179, 157, 219;
@@ -75,6 +83,7 @@
     --quima-deep-purple-a200: 124, 77, 255;
     --quima-deep-purple-a400: 101, 31, 255;
     --quima-deep-purple-a700: 98, 0, 234;
+
     --quima-indigo-50: 232, 234, 246;
     --quima-indigo-100: 197, 202, 233;
     --quima-indigo-200: 159, 168, 218;
@@ -89,6 +98,7 @@
     --quima-indigo-a200: 83, 109, 254;
     --quima-indigo-a400: 61, 90, 254;
     --quima-indigo-a700: 48, 79, 254;
+
     --quima-blue-50: 227, 242, 253;
     --quima-blue-100: 187, 222, 251;
     --quima-blue-200: 144, 202, 249;
@@ -103,6 +113,7 @@
     --quima-blue-a200: 68, 138, 255;
     --quima-blue-a400: 41, 121, 255;
     --quima-blue-a700: 41, 98, 255;
+
     --quima-light-blue-50: 225, 245, 254;
     --quima-light-blue-100: 225, 245, 254;
     --quima-light-blue-200: 129, 212, 250;
@@ -117,6 +128,7 @@
     --quima-light-blue-a200: 64, 196, 255;
     --quima-light-blue-a400: 0, 176, 255;
     --quima-light-blue-a700: 0, 145, 234;
+
     --quima-cyan-50: 224, 247, 250;
     --quima-cyan-100: 178, 235, 242;
     --quima-cyan-200: 128, 222, 234;
@@ -131,6 +143,7 @@
     --quima-cyan-a200: 24, 255, 255;
     --quima-cyan-a400: 0, 229, 255;
     --quima-cyan-a700: 0, 184, 212;
+
     --quima-teal-50: 224, 242, 241;
     --quima-teal-100: 178, 223, 219;
     --quima-teal-200: 128, 203, 196;
@@ -145,6 +158,7 @@
     --quima-teal-a200: 100, 255, 218;
     --quima-teal-a400: 29, 233, 182;
     --quima-teal-a700: 0, 191, 165;
+
     --quima-green-50: 232, 245, 233;
     --quima-green-100: 200, 230, 201;
     --quima-green-200: 165, 214, 167;
@@ -159,6 +173,7 @@
     --quima-green-a200: 105, 240, 174;
     --quima-green-a400: 0, 230, 118;
     --quima-green-a700: 0, 200, 83;
+
     --quima-light-green-50: 241, 248, 233;
     --quima-light-green-100: 220, 237, 200;
     --quima-light-green-200: 197, 225, 165;
@@ -173,6 +188,7 @@
     --quima-light-green-a200: 178, 255, 89;
     --quima-light-green-a400: 118, 255, 3;
     --quima-light-green-a700: 100, 221, 23;
+
     --quima-lime-50: 249, 251, 231;
     --quima-lime-100: 240, 244, 195;
     --quima-lime-200: 230, 238, 156;
@@ -187,6 +203,7 @@
     --quima-lime-a200: 238, 255, 65;
     --quima-lime-a400: 198, 255, 0;
     --quima-lime-a700: 174, 234, 0;
+
     --quima-yellow-50: 255, 253, 231;
     --quima-yellow-100: 255, 249, 196;
     --quima-yellow-200: 255, 245, 157;
@@ -201,6 +218,7 @@
     --quima-yellow-a200: 255, 255, 0;
     --quima-yellow-a400: 255, 234, 0;
     --quima-yellow-a700: 255, 214, 0;
+
     --quima-amber-50: 255, 248, 225;
     --quima-amber-100: 255, 236, 179;
     --quima-amber-200: 255, 224, 130;
@@ -215,6 +233,7 @@
     --quima-amber-a200: 255, 215, 64;
     --quima-amber-a400: 255, 196, 0;
     --quima-amber-a700: 255, 171, 0;
+
     --quima-orange-50: 255, 243, 224;
     --quima-orange-100: 255, 224, 178;
     --quima-orange-200: 255, 204, 128;
@@ -229,6 +248,7 @@
     --quima-orange-a200: 255, 171, 64;
     --quima-orange-a400: 255, 145, 0;
     --quima-orange-a700: 255, 109, 0;
+
     --quima-deep-orange-50: 251, 233, 231;
     --quima-deep-orange-100: 255, 204, 188;
     --quima-deep-orange-200: 255, 171, 145;
@@ -243,6 +263,7 @@
     --quima-deep-orange-a200: 255, 110, 64;
     --quima-deep-orange-a400: 255, 61, 0;
     --quima-deep-orange-a700: 221, 44, 0;
+
     --quima-brown-50: 239, 235, 233;
     --quima-brown-100: 215, 204, 200;
     --quima-brown-200: 188, 170, 164;
@@ -253,6 +274,7 @@
     --quima-brown-700: 93, 64, 55;
     --quima-brown-800: 78, 52, 46;
     --quima-brown-900: 62, 39, 35;
+
     --quima-grey-50: 250, 250, 250;
     --quima-grey-100: 245, 245, 245;
     --quima-grey-200: 238, 238, 238;
@@ -263,6 +285,7 @@
     --quima-grey-700: 97, 97, 97;
     --quima-grey-800: 66, 66, 66;
     --quima-grey-900: 33, 33, 33;
+
     --quima-blue-grey-50: 236, 239, 241;
     --quima-blue-grey-100: 207, 216, 220;
     --quima-blue-grey-200: 176, 190, 197;
@@ -274,130 +297,81 @@
     --quima-blue-grey-800: 55, 71, 79;
     --quima-blue-grey-900: 38, 50, 56;
 
-    --quima-shadow-level-0: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-1: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-        0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-        0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-2: 0px 1px 8px 0px rgba(0, 0, 0, 0.2),
-        0px 3px 4px 0px rgba(0, 0, 0, 0.14),
-        0px 3px 3px -2px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-3: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-        0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-4: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-        0px 5px 8px 0px rgba(0, 0, 0, 0.14),
-        0px 1px 14px 0px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-5: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-        0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-        0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-6: 0px 4px 5px -2px rgba(0, 0, 0, 0.2),
-        0px 7px 10px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 16px 1px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-7: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-        0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-        0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-8: 0px 5px 6px -3px rgba(0, 0, 0, 0.2),
-        0px 9px 12px 1px rgba(0, 0, 0, 0.14),
-        0px 3px 16px 2px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-9: 0px 6px 6px -3px rgba(0, 0, 0, 0.2),
-        0px 10px 14px 1px rgba(0, 0, 0, 0.14),
-        0px 4px 18px 3px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-10: 0px 6px 7px -4px rgba(0, 0, 0, 0.2),
-        0px 11px 15px 1px rgba(0, 0, 0, 0.14),
-        0px 4px 20px 3px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-11: 0px 7px 8px -4px rgba(0, 0, 0, 0.2),
-        0px 12px 17px 2px rgba(0, 0, 0, 0.14),
-        0px 5px 22px 4px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-12: 0px 7px 8px -4px rgba(0, 0, 0, 0.2),
-        0px 13px 19px 2px rgba(0, 0, 0, 0.14),
-        0px 5px 24px 4px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-13: 0px 7px 9px -4px rgba(0, 0, 0, 0.2),
-        0px 14px 21px 2px rgba(0, 0, 0, 0.14),
-        0px 5px 26px 4px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-14: 0px 8px 9px -5px rgba(0, 0, 0, 0.2),
-        0px 15px 22px 2px rgba(0, 0, 0, 0.14),
-        0px 6px 28px 5px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-15: 0px 8px 10px -5px rgba(0, 0, 0, 0.2),
-        0px 16px 24px 2px rgba(0, 0, 0, 0.14),
-        0px 6px 30px 5px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-16: 0px 8px 11px -5px rgba(0, 0, 0, 0.2),
-        0px 17px 26px 2px rgba(0, 0, 0, 0.14),
-        0px 6px 32px 5px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-17: 0px 9px 11px -5px rgba(0, 0, 0, 0.2),
-        0px 18px 28px 2px rgba(0, 0, 0, 0.14),
-        0px 7px 34px 6px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-18: 0px 9px 12px -6px rgba(0, 0, 0, 0.2),
-        0px 19px 29px 2px rgba(0, 0, 0, 0.14),
-        0px 7px 36px 6px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-19: 0px 10px 13px -6px rgba(0, 0, 0, 0.2),
-        0px 20px 31px 3px rgba(0, 0, 0, 0.14),
-        0px 8px 38px 7px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-20: 0px 10px 13px -6px rgba(0, 0, 0, 0.2),
-        0px 21px 33px 3px rgba(0, 0, 0, 0.14),
-        0px 8px 40px 7px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-21: 0px 10px 14px -6px rgba(0, 0, 0, 0.2),
-        0px 22px 35px 3px rgba(0, 0, 0, 0.14),
-        0px 8px 42px 7px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-22: 0px 11px 14px -7px rgba(0, 0, 0, 0.2),
-        0px 23px 36px 3px rgba(0, 0, 0, 0.14),
-        0px 9px 44px 8px rgba(0, 0, 0, 0.12);
-    --quima-shadow-level-23: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
-        0px 24px 38px 3px rgba(0, 0, 0, 0.14),
-        0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    --quima-small-border-radius: 2px;
+    --quima-normal-border-radius: 4px;
+    --quima-large-border-radius: 8px;
+    --quima-max-border-radius: 9999px;
+    --quima-small-margin: 4px;
+    --quima-normal-margin: 8px;
+    --quima-large-margin: 16px;
+    --quima-small-padding: 4px;
+    --quima-normal-padding: 8px;
+    --quima-large-padding: 16px;
 }
 
 :root {
-    --app-background-color: var(--quima-accent-0);
-    --app-color: var(--quima-accent-7);
+    --app-background-color: var(--quima-white);
+    --app-background-color-lighter: var(--quima-white);
+    --app-color: var(--quima-black);
+    --app-color-alpha-50: var(--quima-black-alpha-50);
+    --app-color-alpha-100: var(--quima-black-alpha-100);
+    --app-color-alpha-200: var(--quima-black-alpha-200);
+    --app-color-alpha-300: var(--quima-black-alpha-300);
+    --app-color-alpha-400: var(--quima-black-alpha-400);
+    --app-color-alpha-500: var(--quima-black-alpha-500);
+    --app-color-alpha-600: var(--quima-black-alpha-600);
+    --app-color-alpha-700: var(--quima-black-alpha-700);
+    --app-color-alpha-800: var(--quima-black-alpha-800);
+    --app-color-alpha-900: var(--quima-black-alpha-900);
 
-    --app-bar-background-color: var(--quima-accent-0);
-    --app-bar-border-color: var(--quima-accent-4);
-    --app-bar-color: var(--quima-accent-7);
-    --app-bar-hover-color: var(--quima-accent-12);
+    --app-font-size-xs: 0.75rem;
+    --app-font-size-sm: 0.875rem;
+    --app-font-size-md: 1rem;
+    --app-font-size-lg: 1.125rem;
+    --app-font-size-xl: 1.25rem;
+    --app-font-size-2xl: 1.5rem;
+    --app-font-size-3xl: 1.875rem;
+    --app-font-size-4xl: 2.25rem;
+    --app-font-size-5xl: 3rem;
+    --app-font-size-6xl: 3.75rem;
+    --app-font-size-7xl: 4.5rem;
+    --app-font-size-8xl: 6rem;
+    --app-font-size-9xl: 8rem;
 
-    --button-background-color: var(--quima-blue-700);
-    --button-color: var(--quima-white);
-    --button-focus-color: var(--quima-blue-700);
+    --primary-lightest: var(--quima-blue-300);
+    --primary-lighten: var(--quima-blue-400);
+    --primary: var(--quima-blue-700);
+    --primary-darken: var(--quima-blue-800);
+    --primary-darkest: var(--quima-blue-900);
+    --primary-color: var(--quima-white);
 
-    --input-color: var(--quima-blue-700);
+    --secondary-lightest: var(--quima-pink-200);
+    --secondary-lighten: var(--quima-pink-300);
+    --secondary: var(--quima-pink-500);
+    --secondary-darken: var(--quima-pink-800);
+    --secondary-darkest: var(--quima-pink-900);
+    --secondary-color: var(--quima-white);
 
-    --menu-background-color: var(--quima-accent-0);
+    --danger: var(--quima-red-500);
 
-    --settings-menu-padding: var(--quima-default-component-padding);
-    --settings-menu-margin: var(--quima-default-component-margin);
-    --settings-menu-border: var(--quima-accent-4);
-    --settings-menu-background-color: var(--quima-accent-0);
-    --settings-menu-color: var(--quima-accent-9);
-
-    --menu-item-color: var(--quima-light-app-color-dark);
+    --disabled: var(--quima-black-alpha-200);
+    --disabled-color: var(--quima-black-alpha-400);
 }
-:root[theme="dark"] {
-    --app-background-color: var(--quima-accent-10);
-    --app-color: var(--quima-accent-5);
+:root[darkmode] {
+    --app-background-color: var(--quima-grey-900);
+    --app-background-color-lighter: var(--quima-grey-800);
+    --app-color: var(--quima-white);
+    --app-color-alpha-50: var(--quima-white-alpha-50);
+    --app-color-alpha-100: var(--quima-white-alpha-100);
+    --app-color-alpha-200: var(--quima-white-alpha-200);
+    --app-color-alpha-300: var(--quima-white-alpha-300);
+    --app-color-alpha-400: var(--quima-white-alpha-400);
+    --app-color-alpha-500: var(--quima-white-alpha-500);
+    --app-color-alpha-600: var(--quima-white-alpha-600);
+    --app-color-alpha-700: var(--quima-white-alpha-700);
+    --app-color-alpha-800: var(--quima-white-alpha-800);
+    --app-color-alpha-900: var(--quima-white-alpha-900);
 
-    --app-bar-background-color: var(--quima-accent-9);
-    --app-bar-border-color: var(--quima-accent-8);
-    --app-bar-color: var(--quima-accent-5);
-    --app-bar-hover-color: var(--quima-accent-0);
-
-    --menu-background-color: var(--quima-accent-9);
-
-    --settings-menu-border: var(--quima-accent-8);
-    --settings-menu-background-color: var(--quima-accent-9);
-    --settings-menu-color: var(--quima-accent-5);
-}
-:root[theme="contrast"] {
-    --app-background-color: var(--quima-accent-11);
-    --app-color: var(--quima-accent-6);
-
-    --app-bar-background-color: var(--quima-accent-11);
-    --app-bar-border-color: var(--quima-accent-10);
-    --app-bar-color: var(--quima-accent-6);
-    --app-bar-hover-color: var(--quima-accent-0);
-
-    --settings-menu-border: var(--quima-accent-10);
-    --settings-menu-background-color: var(--quima-accent-10);
-    --settings-menu-color: var(--quima-accent-6);
+    --disabled: var(--quima-white-alpha-200);
+    --disabled-color: var(--quima-white-alpha-400);
 }

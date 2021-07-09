@@ -1,0 +1,75 @@
+.container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin: var(--quima-normal-margin);
+}
+.containerReverse {
+    flex-direction: row-reverse;
+}
+
+.border {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--quima-max-border-radius);
+    box-shadow: inset 0 0 0 2px rgb(var(--app-color-alpha-300));
+    position: relative;
+    transition: box-shadow 300ms;
+}
+.head {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: var(--quima-max-border-radius);
+    transition: 300ms;
+}
+
+.input {
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.label {
+    margin: 0 var(--quima-normal-margin);
+}
+
+.primary.checked .border {
+    box-shadow: inset 0 0 0 2px rgb(var(--primary));
+}
+.secondary.checked .border {
+    box-shadow: inset 0 0 0 2px rgb(var(--secondary));
+}
+.primary.checked .border .head {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: rgb(var(--primary));
+}
+.secondary.checked .border .head {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: rgb(var(--secondary));
+}
+
+.disabled {
+    pointer-events: none;
+    user-select: none;
+}
+.disabled .border {
+    box-shadow: inset 0 0 0 2px rgb(var(--disabled)) !important;
+}
+.disabled .head {
+    background-color: rgb(var(--disabled)) !important;
+}
+.disabled .label {
+    color: rgb(var(--disabled-color));
+}

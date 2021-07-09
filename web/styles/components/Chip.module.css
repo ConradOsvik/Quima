@@ -1,0 +1,51 @@
+.filled {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--quima-max-border-radius);
+    margin: var(--quima-normal-margin);
+    background-color: rgb(var(--app-color-alpha));
+    color: rgb(var(--app-background-color));
+}
+.filled.primary {
+    background-color: rgb(var(--primary));
+    color: rgb(var(--primary-color));
+}
+
+.outline {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--quima-max-border-radius);
+    margin: var(--quima-normal-margin);
+    box-shadow: 0 0 0 2px rgb(var(--app-color-alpha));
+}
+.outline.primary {
+    box-shadow: 0 0 0 2px rgb(var(--primary));
+    background-color: rgba(var(--primary), 0.4);
+    color: rgb(var(--primary-color));
+}
+
+.small {
+    padding: var(--quima-small-padding) calc(var(--quima-small-padding) * 4);
+}
+.medium {
+    padding: var(--quima-normal-padding) calc(var(--quima-normal-padding) * 3);
+}
+.large {
+    padding: var(--quima-large-padding) calc(var(--quima-large-padding) * 2);
+}
+
+.disabled {
+    pointer-events: none;
+    user-select: none;
+}
+.filled.disabled {
+    background-color: rgb(var(--disabled));
+    color: rgb(var(--disabled-color));
+}
+.outline.disabled {
+    background-color: transparent;
+    box-shadow: 0 0 0 2px rgb(var(--disabled));
+    color: rgb(var(--disabled-color));
+}

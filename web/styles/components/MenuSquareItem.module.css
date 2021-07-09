@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 90px;
+    height: 90px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 300ms, border 300ms;
+}
+.container:hover {
+    background-color: rgb(var(--app-color-alpha-200));
+}
+.container:active {
+    border: 1px solid rgb(var(--app-color-alpha-200));
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.iconImg {
+    width: 40px;
+}
+
+.title {
+    width: 100%;
+    margin: 0;
+    font-weight: 500;
+    font-size: var(--app-font-size-sm);
+    text-align: center;
+}
