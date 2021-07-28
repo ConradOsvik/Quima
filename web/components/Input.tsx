@@ -209,7 +209,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                             styles.input
                         }`}
                         value={inputValue}
-                        placeholder={inputFocus ? inputPlaceholder : undefined}
+                        placeholder={inputPlaceholder} //Legacy: inputFocus ? inputPlaceholder : undefined
                         tabIndex={disabled ? -1 : null}
                         disabled={disabled}
                         onChange={(e) => handleChange(e)}
